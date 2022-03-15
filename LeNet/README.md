@@ -14,4 +14,4 @@
 
 ### 训练日志：
 
-![LeNet训练日志](https://images.cnblogs.com/cnblogs_com/blogs/471668/galleries/1907323/o_220315104527_LeNet训练日志.png)
+![LeNet训练日志](https://images.cnblogs.com/cnblogs_com/blogs/471668/galleries/1907323/o_220315130459_LeNet%E8%AE%AD%E7%BB%83%E6%97%A5%E5%BF%97.png)
