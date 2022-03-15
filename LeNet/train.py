@@ -70,7 +70,7 @@ for epoch in range(10):
                 outputs=net(test_image)
                 predict=torch.max(outputs,dim=1)[1]
                 accuracy=(predict==test_label).sum().item()/test_label.size(0)
-                print('[%d, %5d] train loss: %.3f , test accuracy: %.3f' % (
+                print('Epoch:{:3d},  Step:{:5d},  train loss:{:5.3f},  test accuracy:{:5.3f}'.format(
                       epoch+1,step+1,epoch_loss/500,accuracy))
                 epoch_loss=0.0
 
@@ -82,6 +82,3 @@ print('Time cost:',time_cost)
 
 save_path='./lenet_cifar10_weight.pth'
 torch.save(net.state_dict(),save_path)
-
-
-
