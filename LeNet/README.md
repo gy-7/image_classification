@@ -1,8 +1,8 @@
-#### 网络模型结构：
+### 网络模型结构：
 
 ![LeNet模型结构](https://images.cnblogs.com/cnblogs_com/blogs/471668/galleries/1907323/o_220315104051_LeNet.png)
 
-#### 文件说明：
+### 文件说明：
 
 | 文件名                   | 用途                 |
 | ------------------------ | -------------------- |
@@ -12,6 +12,6 @@
 | train.py                 | 训练文件             |
 | predict.py               | 预测文件             |
 
-#### 训练日志：
+### 训练日志：
 
 ![LeNet训练日志](https://images.cnblogs.com/cnblogs_com/blogs/471668/galleries/1907323/o_220315104527_LeNet训练日志.png)
