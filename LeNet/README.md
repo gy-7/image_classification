@@ -30,17 +30,11 @@ $$
 
 四维向量:   [batch, channel, height, width]
 
-Conv2d():
+Conv2d(in_channels, out_channels, kernel_size, stride, padding)
 
->  (in_channels, out_channels, kernel_size, stride, padding)
+MaxPool2d(kernel_size, stride, padding)
 
-MaxPool2d():
-
-> (kernel_size, stride, padding)
-
-Linear():
-
-> (in_features, out_features)
+Linear(in_features, out_features)
 
 | input        | layer_name  | layer_parameter | output       |
 | ------------ | ----------- | --------------- | ------------ |
