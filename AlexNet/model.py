@@ -3,13 +3,12 @@ import torch.nn as nn
 
 
 class AlexNet(nn.Module):
-    def __init__(self,class_num=1000,init_weights=False):         # input[3,227,227]
-        # 值得注意的一点：原图输入224 × 224，实际上进行了随机裁剪，实际大小为227 × 227。
+    def __init__(self,class_num=1000,init_weights=False):         # input[3,224,224]
         super(AlexNet, self).__init__()
 
         self.conv=nn.Sequential(
             # C1
-            nn.Conv2d(3,96,kernel_size=11,stride=4,padding=0) ,     # output[96,55,55]
+            nn.Conv2d(3,96,kernel_size=11,stride=4,padding=2) ,     # output[96,55,55]
             nn.ReLU(inplace=True),
             nn.MaxPool2d(kernel_size=3,stride=2,padding=0),         # output[96,27,27]
 

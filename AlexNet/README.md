@@ -17,7 +17,6 @@
 
 由当时GPU内存的限制引起的，作者使用两块GPU进行计算，因此分为了上下两部分。目前单GPU就足够了，因此其单GPU的结构图如下所示：
 
-![Alexnet2](https://images.cnblogs.com/cnblogs_com/blogs/471668/galleries/1907323/o_220320093600_new_Alexnet.png)
+![Alexnet2](https://images.cnblogs.com/cnblogs_com/blogs/471668/galleries/1907323/o_220322131943_new_Alexnet.png)
 
-:star: 原图输入224 × 224，实际上进行了随机裁剪，实际大小为227 × 227。
 
