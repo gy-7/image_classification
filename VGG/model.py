@@ -48,6 +48,7 @@ def create_convs(cfg:list):     # 根据vgg不同层数，自动定制卷积层
             in_channels=out_channles
     return nn.Sequential(*convs)
     # 以非关键字参数的形式，传入。*convs代表把列表中所有的变量，作为参数，传入到函数nn.Sequential()中
+    # 非关键字参数就是传入的参数个数是可变的，可以是0个，1个，2个，……很多个
 
 cfgs={
     'vgg11':[64,'m',128,'m',256,256,'m',512,512,'m',512,512,'m'],
@@ -57,6 +58,7 @@ cfgs={
 }
 
 def vgg(model_name='vgg16',**kwargs):
+    # 关键字参数允许你传入0个或任意个含参数名的参数，这些关键字参数在函数内部自动组装为一个dict。在调用函数时，可以只传入必选参数。
     assert model_name in cfgs,f"Warning: model number {model_name} not in cfgs dict"
     cfg=cfgs[model_name]
 
