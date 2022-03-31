@@ -18,21 +18,21 @@
 
 
 ### 训练日志：
-
-> | Device: cuda:0
-> | Train dir: E:\Coding\Python\image_classification\ResNet\data\train
-> | Train num: 3301
-> | Val dir: E:\Coding\Python\image_classification\ResNet\data\val
-> | Val num: 369
-> | Bath size: 16
-> | Number of workers: 4
-> training.....
-> Epoch:  1,  train loss:0.516,  test accuracy:0.908
-> Epoch:  2,  train loss:0.348,  test accuracy:0.930
-> Epoch:  3,  train loss:0.293,  test accuracy:0.924
-> | Time cost: 194.76117491722107
-> Done.
-
+```
+| Device: cuda:0
+| Train dir: E:\Coding\Python\image_classification\ResNet\data\train
+| Train num: 3301
+| Val dir: E:\Coding\Python\image_classification\ResNet\data\val
+| Val num: 369
+| Bath size: 16
+| Number of workers: 4
+training.....
+Epoch:  1,  train loss:0.516,  test accuracy:0.908
+Epoch:  2,  train loss:0.348,  test accuracy:0.930
+Epoch:  3,  train loss:0.293,  test accuracy:0.924
+| Time cost: 194.76117491722107
+Done.
+```
 
 
 ### 残差介绍：
