@@ -85,7 +85,7 @@ class block_50_101_152(nn.Module):
         x = self.bn2(x)
         x = self.relu(x)
 
-        x = self.con3(x)
+        x = self.conv3(x)
         x = self.bn3(x)
 
         x += identity
