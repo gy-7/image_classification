@@ -10,7 +10,7 @@ def main():
 
     # load pretrain weights
     # download url: https://download.pytorch.org/models/resnet34-333f7ec4.pth
-    model_weight_path = "./resnet34.pth"
+    model_weight_path = "./weights/resnet34.pth"
     assert os.path.exists(model_weight_path), "file {} does not exist.".format(model_weight_path)
 
     # option1 先按照原先结构定义模型，加载完权重参数后，再修改想要的结构。
