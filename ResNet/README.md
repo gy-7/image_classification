@@ -2,13 +2,13 @@
 
 
 
-#### 推荐链接：
+### 推荐链接：
 
 [CVPR2016:ResNet 从根本上解决深度网络退化问题 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/106764370)
 
 
 
-#### 运行步骤：
+### 运行步骤：
 
 + 点击链接下载花分类数据集 http://download.tensorflow.org/example_images/flower_photos.tgz
 + 数据集下载后解压到data目录下。
@@ -17,7 +17,7 @@
 
 
 
-#### 训练日志：
+### 训练日志：
 
 > | Device: cuda:0
 > | Train dir: E:\Coding\Python\image_classification\ResNet\data\train
@@ -35,7 +35,7 @@
 
 
 
-#### 残差介绍：
+### 残差介绍：
 
 我们想用我们的神经网络拟合一个函数，使得输入数据x，经过函数后得到我们想要的目标值，公式表达也就是：
 $$
@@ -51,7 +51,7 @@ $$
 
 
 
-##### 神经网络当时所遇到的问题：
+### 神经网络当时所遇到的问题：
 
 :one: 梯度弥散/爆炸问题，导致模型训练难以收敛。
 
@@ -65,7 +65,7 @@ $$
 
 
 
-#### 网络结构：
+### 网络结构：
 
 下图中，每一行代表一个stage，一共有5个stage，分别是：conv1, conv2_x, conv3_x, conv4_x, conv5_x。
 
