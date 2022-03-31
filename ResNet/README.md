@@ -11,7 +11,7 @@
 ### 运行步骤：
 
 + 点击链接下载花分类数据集 http://download.tensorflow.org/example_images/flower_photos.tgz
-+ 数据集下载后解压到data目录下。
++ 数据集下载后解压到data目录下，权重文件下载到weights目录下，并重命名，具体看代码中的权重文件名。
 + 运行data目录下的 split_data.py 划分数据集。
 + 运行根目录下 train.py 开始训练，运行 predict.py 测试。
 
