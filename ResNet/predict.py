@@ -52,11 +52,11 @@ def main():
         predict_cla = torch.argmax(predict).numpy()
 
     print_res = "class: {}   prob: {:5.3}".format(class_indict[str(predict_cla)],
-                                                 predict[predict_cla].numpy())
+                                                  predict[predict_cla].numpy())
     plt.title(print_res)
     for i in range(len(predict)):
         print("class: {:10}   prob: {:5.3}".format(class_indict[str(i)],
-                                                  predict[i].numpy()))
+                                                   predict[i].numpy()))
     plt.show()
 
 

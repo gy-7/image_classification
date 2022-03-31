@@ -11,12 +11,11 @@ from model import resnet34
 
 
 def main():
-
     batch_size = 16
     nw = min([os.cpu_count(), batch_size if batch_size > 1 else 0, 8])  # number of workers
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    print("| Device:",device)
+    print("| Device:", device)
 
     data_transform = {
         "train": transforms.Compose([transforms.RandomResizedCrop(224),
@@ -61,12 +60,12 @@ def main():
     with open('class_indices.json', 'w') as json_file:
         json_file.write(json_str)
 
-    print("| Train dir:",train_dir)
-    print("| Train num:",train_num)
-    print("| Val dir:",val_dir)
-    print("| Val num:",val_num)
-    print("| Bath size:",batch_size)
-    print("| Number of workers:",nw)
+    print("| Train dir:", train_dir)
+    print("| Train num:", train_num)
+    print("| Val dir:", val_dir)
+    print("| Val num:", val_num)
+    print("| Bath size:", batch_size)
+    print("| Number of workers:", nw)
 
     net = resnet34()
 
@@ -79,8 +78,8 @@ def main():
     #     param.requires_grad = False
 
     # 修改最后一个全连接层的输出维度。
-    in_channel = net.fc.in_features     # 获取最后一个全连接层的输入维度。
-    net.fc = nn.Linear(in_channel, 5)   # 修改最后一个fc层的out_channel，改为5，因为我们要用5个类别的花分类数据集。
+    in_channel = net.fc.in_features  # 获取最后一个全连接层的输入维度。
+    net.fc = nn.Linear(in_channel, 5)  # 修改最后一个fc层的out_channel，改为5，因为我们要用5个类别的花分类数据集。
     net.to(device)
 
     # define loss function
@@ -95,7 +94,7 @@ def main():
     save_path = './weights/resnet34_flower.pth'
     train_steps = len(train_loader)
     print("training.....")
-    start_time=time.time()
+    start_time = time.time()
     for epoch in range(epochs):
         # train
         net.train()
@@ -122,7 +121,7 @@ def main():
                 predict_y = torch.max(outputs, dim=1)[1]
                 acc += torch.eq(predict_y, val_labels.to(device)).sum().item()
 
-        epoch_loss_eva=epoch_loss/train_steps
+        epoch_loss_eva = epoch_loss / train_steps
         val_accurate = acc / val_num
 
         if val_accurate > best_acc:
@@ -132,8 +131,8 @@ def main():
         print('Epoch:{:3d},  train loss:{:5.3f},  test accuracy:{:5.3f}'.format(
             epoch + 1, epoch_loss_eva, val_accurate))
 
-    end_time=time.time()
-    print("| Time cost:",end_time-start_time)
+    end_time = time.time()
+    print("| Time cost:", end_time - start_time)
     print('Done.')
 
 
