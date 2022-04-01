@@ -12,3 +12,4 @@
 
 :four: ResNet
 
+:five: ResNeXt
