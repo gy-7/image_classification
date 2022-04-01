@@ -1,5 +1,6 @@
-**论文原文**：https://arxiv.org/pdf/1512.03385.pdf
+### 论文原文：
 
+[ Deep Residual Learning for Image Recognition (arxiv.org)](https://arxiv.org/abs/1512.03385)
 
 
 ### 推荐链接：
