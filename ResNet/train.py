@@ -27,10 +27,6 @@ def main():
                                    transforms.ToTensor(),
                                    transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])}
 
-    # data_root = os.path.abspath(os.path.join(os.getcwd(), "../.."))  # get data root path
-    # image_path = os.path.join(data_root, "data_set", "flower_data")  # flower data set path
-    # assert os.path.exists(image_path), "{} path does not exist.".format(image_path)
-
     # 加载训练集和验证集
     train_dir = os.path.join(os.getcwd(), 'data', 'train')
     assert os.path.exists(train_dir), "{} path does not exist.".format(train_dir)
