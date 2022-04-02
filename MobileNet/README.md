@@ -49,13 +49,13 @@ Done.
 
 v1:
 
-<img src="F:\桌面\QQ截图20220402113946.png" alt="网络结构" style="zoom:33%;" />
+<img src="https://images.cnblogs.com/cnblogs_com/blogs/471668/galleries/1907323/o_220402134822_mobilenetv1.png" alt="mobilenetv1" style="zoom:33%;" />
 
 v2:
 
 t是扩展因子，c是输出特征图的深度，n是bottleneck重复次数，s是步距（只针对每个bottleneck中的第一个，其余的都为1）。
 
-<img src="F:\桌面\mobilenetv2.png" alt="mobilenetv2" style="zoom: 67%;" />
+<img src="https://images.cnblogs.com/cnblogs_com/blogs/471668/galleries/1907323/o_220402134827_mobilenetv2.png" alt="mobilenetv2" style="zoom: 67%;" />
 
 
 
@@ -77,7 +77,7 @@ $Y_h$, $Y_w$, $Y_c$分别代表输出特征图的高，宽，通道数。
 
 **普通卷积的计算量**：
 
-![Snipaste_2022-04-02_11-22-03](F:\桌面\Snipaste_2022-04-02_11-22-03.png)
+![Conv](https://images.cnblogs.com/cnblogs_com/blogs/471668/galleries/1907323/o_220402134805_conv.png)
 
 普通卷积中一条红线的计算量（忽略加法）是：
 $$
@@ -88,8 +88,7 @@ $$
 X_h*X_w*K_h*K_w*X_c*Y_c
 $$
 
-
-**DW卷积的计算量**：![Snipaste_2022-04-02_11-22-13](F:\桌面\Snipaste_2022-04-02_11-22-13.png)
+**DW卷积的计算量**：![DW_conv](https://images.cnblogs.com/cnblogs_com/blogs/471668/galleries/1907323/o_220402134816_dw_conv.png)
 $$
 (X_h*X_w*K_h*K_w*X_c)+(X_h*X_w*1*1*X_c*Y_c) \\
 =X_h*X_w*X_c*(K_h*K_w+Y_c)
