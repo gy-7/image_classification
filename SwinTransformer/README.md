@@ -20,19 +20,32 @@
 
 ### 训练日志：
 ```
-| Device: cuda:0
-| Train dir: E:\Coding\Python\image_classification\ResNet\data\train
-| Train num: 3301
-| Val dir: E:\Coding\Python\image_classification\ResNet\data\val
-| Val num: 369
-| Bath size: 16
-| Number of workers: 4
-training.....
-Epoch:  1,  train loss:0.516,  test accuracy:0.908
-Epoch:  2,  train loss:0.348,  test accuracy:0.930
-Epoch:  3,  train loss:0.293,  test accuracy:0.924
-| Time cost: 194.76117491722107
-Done.
+3670 images were found in the dataset.
+2939 images for training.
+731 images for validation.
+Using 6 dataloader workers every process
+_IncompatibleKeys(missing_keys=['head.weight', 'head.bias'], unexpected_keys=['layers.0.blocks.1.attn_mask', 'layers.1.blocks.1.attn_mask', 'layers.2.blocks.1.attn_mask', 'layers.2.blocks.3.attn_mask', 'layers.2.blocks.5.attn_mask', 'layers.2.blocks.7.attn_mask', 'layers.2.blocks.9.attn_mask', 'layers.2.blocks.11.attn_mask', 'layers.2.blocks.13.attn_mask', 'layers.2.blocks.15.attn_mask', 'layers.2.blocks.17.attn_mask'])
+[train epoch 1] loss: 0.375, acc: 0.866: 100%|██████████| 92/92 [01:01<00:00,  1.51it/s]
+[valid epoch 1] loss: 0.167, acc: 0.943: 100%|██████████| 23/23 [00:05<00:00,  4.02it/s]
+[train epoch 2] loss: 0.197, acc: 0.933: 100%|██████████| 92/92 [01:01<00:00,  1.50it/s]
+[valid epoch 2] loss: 0.202, acc: 0.929: 100%|██████████| 23/23 [00:05<00:00,  3.98it/s]
+[train epoch 3] loss: 0.141, acc: 0.950: 100%|██████████| 92/92 [01:01<00:00,  1.49it/s]
+[valid epoch 3] loss: 0.217, acc: 0.934: 100%|██████████| 23/23 [00:05<00:00,  4.00it/s]
+[train epoch 4] loss: 0.114, acc: 0.961: 100%|██████████| 92/92 [01:01<00:00,  1.49it/s]
+[valid epoch 4] loss: 0.129, acc: 0.958: 100%|██████████| 23/23 [00:05<00:00,  3.99it/s]
+[train epoch 5] loss: 0.094, acc: 0.968: 100%|██████████| 92/92 [01:01<00:00,  1.49it/s]
+[valid epoch 5] loss: 0.169, acc: 0.955: 100%|██████████| 23/23 [00:05<00:00,  3.97it/s]
+[train epoch 6] loss: 0.093, acc: 0.969: 100%|██████████| 92/92 [01:01<00:00,  1.49it/s]
+[valid epoch 6] loss: 0.511, acc: 0.880: 100%|██████████| 23/23 [00:05<00:00,  3.98it/s]
+[train epoch 7] loss: 0.087, acc: 0.968: 100%|██████████| 92/92 [01:01<00:00,  1.49it/s]
+[valid epoch 7] loss: 0.171, acc: 0.952: 100%|██████████| 23/23 [00:05<00:00,  3.96it/s]
+[train epoch 8] loss: 0.081, acc: 0.973: 100%|██████████| 92/92 [01:01<00:00,  1.49it/s]
+[valid epoch 8] loss: 0.156, acc: 0.953: 100%|██████████| 23/23 [00:05<00:00,  3.96it/s]
+[train epoch 9] loss: 0.069, acc: 0.977: 100%|██████████| 92/92 [01:01<00:00,  1.49it/s]
+[valid epoch 9] loss: 0.139, acc: 0.960: 100%|██████████| 23/23 [00:05<00:00,  3.95it/s]
+
+进程已结束,退出代码0
+
 ```
 
 
