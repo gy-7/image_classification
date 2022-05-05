@@ -1,24 +1,29 @@
+### 代码来源于 ：
+
+[deep-learning-for-image-processing](https://github.com/WZMIAOMIAO/deep-learning-for-image-processing)
+
+B站网络导师了，强烈推荐。
+
+
+
 ### 论文原文：
 
-[ Deep Residual Learning for Image Recognition (arxiv.org)](https://arxiv.org/abs/1512.03385)
-
-
-### 推荐链接：
-
-[CVPR2016:ResNet 从根本上解决深度网络退化问题 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/106764370)
+[ Swin Transformer: Hierarchical Vision Transformer using Shifted Windows (arxiv.org)](https://arxiv.org/abs/2103.14030)
 
 
 
 ### 运行步骤：
 
 + 点击链接下载花分类数据集 http://download.tensorflow.org/example_images/flower_photos.tgz
-+ 数据集下载后解压到data目录下，权重文件下载到weights目录下，并重命名，具体看代码中的权重文件名。
-+ 运行data目录下的 split_data.py 划分数据集。
++ 数据集下载后解压到data目录下，运行data文件夹下split_data.py脚本。
++ 新建一个weights文件夹，权重文件下载到weights目录下，并重命名，具体看代码中的权重文件名。
+  + 权重下载速度慢：可以用这个网址转链：[GitHub Proxy 代理加速 (ghproxy.com)](https://ghproxy.com/)
 + 运行根目录下 train.py 开始训练，运行 predict.py 测试。
 
 
 
 ### 训练日志：
+
 ```
 3670 images were found in the dataset.
 2939 images for training.
@@ -45,51 +50,53 @@ _IncompatibleKeys(missing_keys=['head.weight', 'head.bias'], unexpected_keys=['l
 [valid epoch 9] loss: 0.139, acc: 0.960: 100%|██████████| 23/23 [00:05<00:00,  3.95it/s]
 
 进程已结束,退出代码0
-
 ```
-
-
-### 残差介绍：
-
-我们想用我们的神经网络拟合一个函数，使得输入数据x，经过函数后得到我们想要的目标值，公式表达也就是：
-$$
-F(x)=target
-$$
-已有的神经网络很难拟合的这个映射函数，因此提出拟合残差，而残差学习就是，让我们的神经网络不直接学习 $target$，而是学习 $target-x$ ，公式表达也就是：
-$$
-F(x)=target-x
-$$
-拟合残差比拟合映射容易的原因：
-
-[CVPR2016:ResNet 从根本上解决深度网络退化问题](https://zhuanlan.zhihu.com/p/106764370) , 看上边这篇博客中的，**残差结构起作用的原因**，章节。
-
-
-
-### 神经网络当时所遇到的问题：
-
-:one: 梯度弥散/爆炸问题，导致模型训练难以收敛。
-
-:two: 网络退化问题，由于非线性激活函数Relu的存在，每次输入到输出的过程都几乎是不可逆的，这也造成了许多不可逆的信息损失。
-
-
-
-利用标准初始化和中间层正规化方法，基本可以有效解决梯度弥散/爆炸问题。
-
-利用残差结构，解决网络退化问题。
 
 
 
 ### 网络结构：
 
-下图中，每一行代表一个stage，一共有5个stage，分别是：conv1, conv2_x, conv3_x, conv4_x, conv5_x。
+![image-20220505220529148](https://images.cnblogs.com/cnblogs_com/blogs/471668/galleries/1907323/o_220505141705_image-20220505220529148.png)
 
-每个stage里面都是一个block，不同的block有不同的重复次数，例如：50-layer中conv4_x，重复了6次。
+> Swin-T: C = 96, layer numbers = {2,2,6,2}
+>
+> Swin-S: C = 96, layer numbers ={2,2,18,2}
+>
+> Swin-B: C = 128, layer numbers ={2,2,18,2}
+>
+> Swin-L: C = 192, layer numbers ={2,2,18,2}
 
-![ResNet](https://images.cnblogs.com/cnblogs_com/blogs/471668/galleries/1907323/o_220330034611_resnet.png)
 
-下图，34-layer residual中虚线代表为了维度能够对其，需要对输入的特征进行下采样。
 
-![resnet1](https://images.cnblogs.com/cnblogs_com/blogs/471668/galleries/1907323/o_220330034619_resnet1.png)
+### 多尺度输入：
+
+Swin Transformer输入图片尺寸也应该是固定的，因为在Shift Windows过程中，生成的Mask attention尺寸是固定的，因为我们要让生成的Mask attention符合我们的窗口尺寸以及窗口数量。
+
+所以如果想要支持动态的输入尺寸，我们就必须动态地生成这些Mask attention。
+
+
+
+### 下面放一组图片便于代码理解，图片均来源于
+
+###  [12.2 使用Pytorch搭建Swin-Transformer网络\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1yg411K7Yc/?spm_id_from=333.788)
+
+
+
+#### Patch Partition + Linear Embedding:
+
+![Patch Partition Linear Embedding:](https://images.cnblogs.com/cnblogs_com/blogs/471668/galleries/1907323/o_220505143343_image-20220505222857683.png)
+
+#### Patch Merging
+
+![Patch Merging](https://images.cnblogs.com/cnblogs_com/blogs/471668/galleries/1907323/o_220505143350_image-20220505223031262.png)
+
+#### W-MSA: Windows Multi-head Self-Attention
+
+![W-MSA](https://images.cnblogs.com/cnblogs_com/blogs/471668/galleries/1907323/o_220505143355_image-20220505223107698.png)
+
+#### SW-MSA: Shifted Windows Multi-head Self-Attention
+
+![SW-MSA](https://images.cnblogs.com/cnblogs_com/blogs/471668/galleries/1907323/o_220505143400_image-20220505223200788.png)
 
 
 
