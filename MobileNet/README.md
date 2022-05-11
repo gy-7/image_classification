@@ -5,7 +5,8 @@ v1: [ MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Appl
 v2: [ MobileNetV2: Inverted Residuals and Linear Bottlenecks (arxiv.org)](https://arxiv.org/abs/1801.04381)
 
 
-
+### Pytorch官方预训练权重下载
+'mobilenet_v2': 'https://download.pytorch.org/models/mobilenet_v2-b0353104.pth',
 
 
 ### 运行步骤：
