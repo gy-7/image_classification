@@ -1,6 +1,6 @@
 论文原文：http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf
 
-### Pytorch官方预训练权重下载
+#### Pytorch官方预训练权重下载
 
 alexnet: https://download.pytorch.org/models/alexnet-owt-4df8aa71.pth
 
