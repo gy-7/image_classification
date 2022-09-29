@@ -6,10 +6,11 @@ B站网络导师了，强烈推荐。
 
 
 
-### 论文原文：
+### 论文和开源库：
 
 [ Swin Transformer: Hierarchical Vision Transformer using Shifted Windows (arxiv.org)](https://arxiv.org/abs/2103.14030)
 
+https://github.com/microsoft/Swin-Transformer 权重在这里下载
 
 
 ### 运行步骤：
